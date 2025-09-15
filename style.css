@@ -30,7 +30,7 @@ html, body {
 
 /* スプラッシュロゴのサイズ */
 #splash-logo {
-  width: 200px;        /* お好みのサイズに調整可能 */
+  width: 350px;        /* お好みのサイズに調整可能 */
   height: auto;
   max-width: 80vw;     /* 小さな画面でもはみ出さないように */
 }
