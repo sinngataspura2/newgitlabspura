@@ -26,13 +26,21 @@
   </div>
 
   <script>
-    // スプラッシュ後にiframeを表示
-    window.addEventListener("load", () => {
-      setTimeout(() => {
-        document.getElementById("splash").style.display = "none";
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const splash = document.getElementById("splash");
+
+      // フェードアウトクラスを追加
+      splash.classList.add("fade-out");
+
+      // アニメーションが終わったら非表示にして、iframe を表示
+      splash.addEventListener("transitionend", () => {
+        splash.style.display = "none";
         document.getElementById("iframe-container").style.display = "block";
-      }, 2000); // 2秒後に切り替え
-    });
-  </script>
+      });
+
+    }, 2000); // 2秒表示してからフェード開始
+  });
+</script>
 </body>
 </html>
