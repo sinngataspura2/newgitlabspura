@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- iOS Webアプリ化設定 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="scratchスプラ">
+  <link rel="apple-touch-icon" href="IMG_6226.png">
+
+  <title>scratch スプラ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- スプラッシュロゴ -->
+  <div id="splash">
+    <img src="logo.png" alt="Logo" id="splash-logo">
+  </div>
+
+  <!-- コンテンツ表示領域 -->
+  <div id="app" style="display: none;"></div>
+
+  <script>
+    // スプラッシュ画面を2秒表示してからHTMLを読み込む
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+        document.getElementById('app').style.display = 'block';
+
+        // content.htmlを読み込んで挿入
+        fetch('新型スプラトゥーン2_.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('app').innerHTML = data;
+          })
+          .catch(error => {
+            document.getElementById('app').innerHTML = '<p>読み込みエラー</p>';
+            console.error('HTML読み込み失敗:', error);
+          });
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
