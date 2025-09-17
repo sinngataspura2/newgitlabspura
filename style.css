@@ -39,7 +39,7 @@ html, body {
 #iframe-container {
   background-color: #000000;
   display: none;       /* 初期状態では非表示 */
-  width: 100%;
+  width: 200%;
   height: 100vh;       /* 全画面表示 */
 }
 
