@@ -42,7 +42,7 @@
     // 機種がiPadかどうかを判定する関数
     function isIPad() {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /IPad/.test(ua) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /Macintosh/.test(ua));
+      return /iPad/.test(ua) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /Macintosh/.test(ua));
     }
 
     window.addEventListener("load", () => {
