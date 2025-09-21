@@ -40,9 +40,9 @@
 
   <script>
     // 機種がiPadかどうかを判定する関数
-    function isIPhone() {
+    function isIPad() {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
-      return /IPhone/.test(ua) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /Macintosh/.test(ua));
+      return /IPad/.test(ua) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 2 && /Macintosh/.test(ua));
     }
 
     window.addEventListener("load", () => {
@@ -57,10 +57,10 @@
           const iframe = document.getElementById("content-frame");
 
           // iPadなら埋め込み1、それ以外は埋め込み2を表示
-          if (isIPhone()) {
-            iframe.src = "https://sinngataspura2.github.io/newspura2ver4.7/"; // ← iPad用URL
+          if (isIPad()) {
+            iframe.src = "https://turbowarp.org/1153907737/embed?addons=pause"; // ← iPad用URL
           } else {
-            iframe.src = "https://turbowarp.org/1153907737/embed?addons=pause"; // ← その他デバイス用URL
+            iframe.src = "https://sinngataspura2.github.io/newspura2ver4.7/"; // ← その他デバイス用URL
           }
         });
 
